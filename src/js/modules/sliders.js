@@ -76,7 +76,7 @@ const sliders = (slides, dir, prev, next) => {
                 // Вызываем функцию перелистывания на 1 слайд
                 plusSlides(1);
                  // Добавляем класс анимации
-                items[slideIndex - 1].classList.add('slideInLeft');
+                items[slideIndex - 1].classList.add('slideInDown');
             }, 5000);
         } else {
             // Записывать id setInterval в paused
