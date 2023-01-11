@@ -4,12 +4,27 @@ import { getResource } from "../services/reqeusts";
 const showMoreStyles = (trigger, wrapper) => {
     const btn = document.querySelector(trigger);
 
+    const errorText = document.createElement('div');
+    errorText.classList.add('error', 'animated', 'fadeIn');
+    errorText.textContent = 'Не удалось загрузить стили рисунков. Сервер не отвечает.';
+
     btn.addEventListener('click', function() {
         // Также можно обратиться к файлу json напрямую assets/db.json
         getResource('http://localhost:3000/styles')
         // Если обращаемся к файлу напрямую, то нужно передавать в функцию res.styles
         .then(res => createCards(res))
-        .catch(error => console.log(error))
+        .catch(error => {
+            console.log(error);
+            document.querySelector(wrapper).appendChild(errorText);
+            setTimeout(() => {
+                document.querySelector(wrapper).appendChild(btn);
+            },5000);
+        })
+        .finally(() => {
+            setTimeout(() => {
+                errorText.remove();
+            },5000);
+        })
         
         this.remove();
     });
