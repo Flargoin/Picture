@@ -76,6 +76,7 @@ const mask = (selector) => {
     // Всем инпутам назначаем обработчики события input, focus, blur
     inputs.forEach(item => {
         item.addEventListener('input', createMask);
+        item.addEventListener('keypress', createMask);
         item.addEventListener('focus', createMask);
         item.addEventListener('blur', createMask);
     });

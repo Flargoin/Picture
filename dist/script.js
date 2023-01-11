@@ -4617,6 +4617,7 @@ var mask = function mask(selector) {
 
   inputs.forEach(function (item) {
     item.addEventListener('input', createMask);
+    item.addEventListener('keypress', createMask);
     item.addEventListener('focus', createMask);
     item.addEventListener('blur', createMask);
   });
@@ -4810,7 +4811,7 @@ var showMoreStyles = function showMoreStyles(trigger, wrapper) {
           link = _ref.link;
       var card = document.createElement('div');
       card.classList.add('col-sm-3', 'col-sm-offset-0', 'col-xs-10', 'col-xs-offset-1', 'animated', 'fadeInUp');
-      card.innerHTML = "\n            <div class=\"styles-block\">\n                <img src=".concat(src, " alt=\"style\">\n                <h4>").concat(title, "</h4>\n                <a href=\"#\">").concat(link, "</a>\n            </div>\n            ");
+      card.innerHTML = "\n            <div class=\"styles-block\">\n                <img src=".concat(src, " alt=\"style\">\n                <h4>").concat(title, "</h4>\n                <a href=\"").concat(link, "\">\u041F\u043E\u0434\u0440\u043E\u0431\u043D\u0435\u0435</a>\n            </div>\n            ");
       document.querySelector(wrapper).appendChild(card);
     });
   }
