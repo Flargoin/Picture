@@ -8,13 +8,16 @@ import calc from "./modules/calc";
 
 window.addEventListener('DOMContentLoaded', () => {
     'use strict';
+
+    const calcState = {};
+
     modals();
     sliders('.feedback-slider-item', 'horizontal', '.main-prev-btn', '.main-next-btn');
     sliders('.main-slider-item', 'vertical', '.main-prev-btn', '.main-next-btn', '', '');
-    forms();
+    forms(calcState);
     mask('[name = "phone"]');
     checkTextInputs('[name = "name"]');
     checkTextInputs('[name = "message"]');
     showMoreStyles('.button-styles', '#styles .row');
-    calc('#size', '#material', '#options', '.promocode', '.calc-price');
+    calc('#size', '#material', '#options', '.promocode', '.calc-price', calcState);
 });

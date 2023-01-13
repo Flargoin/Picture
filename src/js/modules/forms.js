@@ -1,6 +1,7 @@
 import { postData } from "../services/reqeusts";
+import clearState from "./clearState";
 
-const forms = () => {
+const forms = (state) => {
     /* 
         forms - все формы на странице
         inputs - все инпуты со страницы
@@ -80,6 +81,11 @@ const forms = () => {
 
             // Собираем данные из формы и определяем по какому пути их отправить
             const formData = new FormData(item);
+            if(item.getAttribute('id') === 'order') {
+                for(let key in state) {
+                    formData.append(key, state[key]);
+                }
+            }
             let api;
             item.closest('.popup-design') || item.classList.contains('calc_form') ? api = path.designer : api = path.question;
             console.log(api);
@@ -99,6 +105,7 @@ const forms = () => {
                 setTimeout(() => {
                     statusMessage.remove();
                     clearInputs();
+                    clearState(state);
                     item.style.display = 'block';
                     item.classList.remove('fadeOutUp');
                     item.classList.add('fadeInUp');
