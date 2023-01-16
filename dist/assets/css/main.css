@@ -838,12 +838,15 @@ h4 {
   padding: 9rem 0;
 }
 .feedback-slider-item {
-  overflow: hidden;
   padding-bottom: 5rem;
 }
 .feedback-block {
   position: relative;
 }
+.feedback-block img {
+  width: 100%;
+}
+
 .feedback-block .button-order {
   position: absolute;
   bottom: -3rem;
@@ -1528,6 +1531,9 @@ h4 {
     margin-left: auto;
     margin-right: auto;
   }
+  .main-slider-item img {
+    width: 100%;
+  }
   .card-block {
     padding: 5rem;
   }
@@ -1576,8 +1582,17 @@ h4 {
   .card-3 img {
     float: right;
   }
+  .feedback {
+    padding: 2rem 0 23rem 0;
+  }
+  .feedback-slider {
+    height: auto !important;
+  }
   .feedback-slider-item {
     padding-bottom: 0;
+  }
+  .feedback-info {
+    display: none;
   }
   .feedback-heading {
     margin-top: 6rem;
@@ -1587,6 +1602,7 @@ h4 {
     margin: 0 auto;
   }
   .feedback .button-order {
+    position: absolute;
     left: 50%;
     transform: translateX(-50%);
     width: 18rem;
@@ -1618,6 +1634,10 @@ h4 {
   .main-slider-btn {
     width: 2rem;
     height: 2rem;
+  }
+  .main-slider-item {
+    margin-top: 20px;
+    width: 100%;
   }
   .main .logo {
     font-size: 1.5rem;
@@ -1720,7 +1740,7 @@ h4 {
     padding: 5rem 0;
   }
   .feedback {
-    padding: 5rem 0;
+    padding: 7rem 0;
   }
   .feedback .main-next-btn {
     right: -1rem;
